@@ -1,0 +1,19 @@
+---
+# DBB v3 sample by Victor
+#
+version: 1.0.0
+application:
+  name: summer_zbuilder
+  tasks:
+    - task: Cobol
+      variables:      
+        - name: doLinkEdit
+          value: true
+          select:
+            - condition: 
+                exists: userbuild
+              value: true     
+        - name: debug  # always compile with TEST option
+          value: true  
+
+    - task: LinkEdit
